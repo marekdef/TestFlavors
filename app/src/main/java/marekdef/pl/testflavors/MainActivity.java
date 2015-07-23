@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import marekdef.pl.mylibrary.Library;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mView = (TextView) findViewById(R.id.textView);
-        //        mView.setText(String.valueOf(new Library2().getFlavor()));
+        mView.setText(String.valueOf(new Library().getFlavor()));
     }
 
     @Override
