@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
 
 configurations {
-    debugCompile {}
-    releaseCompile {}
-    calabashCompile {}
-    compileCalabashJava {}
+//    debugCompile {}
+//    releaseCompile {}
+//    calabashCompile {}
 }
 
 android {
@@ -34,11 +33,9 @@ android {
 
 
 dependencies {
-    compile('com.android.support:appcompat-v7:22.2.0')
+    compile 'com.android.support:appcompat-v7:22.2.0'
 
-    debugCompile(project(path: ':mylibrary', configuration: 'debugCompile'))
-    releaseCompile(project(path: ':mylibrary', configuration: 'releaseCompile'))
-    calabashCompile(project(path: ':mylibrary', configuration: 'debugCompile'))
-
-    compileCalabashJava(project(path: ':mylibrary', configuration: 'debugCompile'))
-}
+    debugCompile project(path: ':mylibrary', configuration: 'debugCompile')
+    releaseCompile project(path: ':mylibrary', configuration: 'releaseCompile')
+    calabashCompile project(path: ':mylibrary', configuration: 'debugCompile')
+} 
