@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         mView = (TextView) findViewById(R.id.textView);
         mView.setText(String.valueOf(new Library().getFlavor()));
+        //        AndroidSchedulers.mainThread();
     }
 
     @Override
