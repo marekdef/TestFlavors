@@ -1,13 +1,10 @@
 apply plugin: 'com.android.library'
 
-configurations {
-	debugCompile {}
-	releaseCompile {}
-}
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
+
+    publishNonDefault true
 
     defaultConfig {
         minSdkVersion 15
@@ -16,7 +13,7 @@ android {
         versionName "1.0"
     }
     buildTypes {
-	publishNonDefault true
+	
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

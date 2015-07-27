@@ -11,16 +11,20 @@ import marekdef.pl.mylibrary.Library;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mView;
+    private TextView mApp;
+    private TextView mLibrary;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mView = (TextView) findViewById(R.id.textView);
-        mView.setText(String.valueOf(new Library().getFlavor()));
-        //        AndroidSchedulers.mainThread();
+        mApp = (TextView) findViewById(R.id.app);
+        mLibrary = (TextView) findViewById(R.id.library);
+
+        mApp.setText(BuildConfig.FLAVOR + BuildConfig.BUILD_TYPE);
+        mLibrary.setText(marekdef.pl.mylibrary.BuildConfig.FLAVOR + marekdef.pl.mylibrary.BuildConfig.BUILD_TYPE);
     }
 
     @Override

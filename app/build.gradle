@@ -1,11 +1,5 @@
 apply plugin: 'com.android.application'
 
-configurations {
-//    debugCompile {}
-//    releaseCompile {}
-//    calabashCompile {}
-}
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -17,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -24,10 +19,6 @@ android {
         }
 
         calabash.initWith(buildTypes.debug)
-
-        calabash {
-
-        }
     }
 }
 
@@ -35,7 +26,7 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
 
-    debugCompile project(path: ':mylibrary', configuration: 'debugCompile')
-    releaseCompile project(path: ':mylibrary', configuration: 'releaseCompile')
-    calabashCompile project(path: ':mylibrary', configuration: 'debugCompile')
+    debugCompile project(path: ':mylibrary', configuration: 'debug')
+    calabashCompile project(path: ':mylibrary', configuration: 'debug')
+    releaseCompile project(path: ':mylibrary', configuration: 'release')
 } 
