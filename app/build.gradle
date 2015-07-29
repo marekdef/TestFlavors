@@ -24,6 +24,7 @@ android {
 
 	coverage {
         	initWith(buildTypes.debug)
+		testCoverageEnabled true
 	}
     }
 }
