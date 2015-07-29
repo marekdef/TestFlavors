@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mApp;
     private TextView mLibrary;
+    private TextView mCall;
 
 
     @Override
@@ -22,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
         mApp = (TextView) findViewById(R.id.app);
         mLibrary = (TextView) findViewById(R.id.library);
+        mCall = (TextView) findViewById(R.id.call);
 
         mApp.setText(BuildConfig.FLAVOR + BuildConfig.BUILD_TYPE);
         mLibrary.setText(marekdef.pl.mylibrary.BuildConfig.FLAVOR + marekdef.pl.mylibrary.BuildConfig.BUILD_TYPE);
+        mCall.setText(new Library().getFlavor());
     }
 
     @Override

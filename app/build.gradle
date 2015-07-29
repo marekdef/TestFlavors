@@ -18,7 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-        calabash.initWith(buildTypes.debug)
+	debug {
+		testCoverageEnabled true
+	}
+
+	coverage {
+        	initWith(buildTypes.debug)
+	}
     }
 }
 
@@ -27,6 +33,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
 
     debugCompile project(path: ':mylibrary', configuration: 'debug')
-    calabashCompile project(path: ':mylibrary', configuration: 'debug')
+    coverageCompile project(path: ':mylibrary', configuration: 'debug')
     releaseCompile project(path: ':mylibrary', configuration: 'release')
 } 
